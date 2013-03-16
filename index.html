@@ -26,7 +26,7 @@
 	<div data-role="content">	
 		<ul data-role="listview" data-inset="true">
 			<li><a href="#nr1">Nueva Reservación</a></li>
-            <li><a href="#historial">Reservaciones Anteriores</a></li>
+            <li><a href="#historial" id="irHist">Reservaciones Anteriores</a></li>
 			<li><a href="#priv">Privacidad</a></li>
 		</ul>		
 	</div>
@@ -61,17 +61,7 @@
 		<h1>Historial</h1>
 	</div>
 	<div data-role="content">
-		<div data-role="collapsible-set">
-            <div data-role="collapsible" data-collapsed="true">
-                <h3>
-                    16/02/2013
-                </h3>
-                <strong>Habitaciones:</strong> X<br />
-                <strong>Personas:</strong> Y<br />
-                <strong>Estancia:</strong> Z<br />
-            </div>
-            
-        </div>		
+		
 	</div>
 	<div data-role="footer" data-position="fixed">
 		<div data-role="navbar" data-iconpos="top">
@@ -206,6 +196,16 @@
                 <option value="4">Oaxaca</option>
                 <option value="5">Tamaulipas</option>
             </select></li>
+            <li><input type="email" id="regEmail" placeholder="Correo Electrónico" /></li>
+            <li><input type="tel" id="regTel" placeholder="Teléfono" /></li>
+            <li><a id="regFoto">Tomar Foto</a></li>
+        </ul>
+        <a data-role="button" id="regSubmit" data-theme="b">Registrar</a>
+    </div>
+</div>
+
+</body>
+</html>      </select></li>
             <li><input type="email" id="regEmail" placeholder="Correo Electrónico" /></li>
             <li><input type="tel" id="regTel" placeholder="Teléfono" /></li>
             <li><a id="regFoto">Tomar Foto</a></li>
