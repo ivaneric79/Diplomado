@@ -76,7 +76,7 @@ function guardarReservaciones(habs,pers,dias,tipo){
 	var f=new Date();
 	var fecha = f.getDate()+'/'+f.getMonth()+'/'+f.getFullYear();
 	accesoBD().transaction(function(tx){
-		tx.executeSql('INSERT INTO reserva ( fecha, habitaciones, personas, dias, tipo) VALUES ('+fecha+'","'+habs+'","'+pers+'","'+dias+'","'+tipo+'")');
+		tx.executeSql('INSERT INTO reserva (fecha, habitaciones, personas, dias, tipo) VALUES ('+fecha+'","'+habs+'","'+pers+'","'+dias+'","'+tipo+'")');
 	guardarHistorial(habs,pers,dias);
 	},function(err){
 		pgAlert('Error al guardar la Reserva',err.code);
