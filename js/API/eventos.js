@@ -49,7 +49,7 @@ function reservar(){
 			guardarReservaciones(habs, pers, dias, tipo);
 		}else{
 			//Sincronizar en el Servidor
-			alert('desconectate');
+			syncSend(habs,pers,dias,tipo,0)
 		}
 	});
 }

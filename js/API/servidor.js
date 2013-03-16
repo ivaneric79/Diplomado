@@ -14,18 +14,19 @@ function logSend(nombre,lugar,mail,tel){
 	});
 }
 
-
-function syncSend(habs,pers,dias,tipo,id){
+function syncSend(habs,pers,dias,tipo,idReserva){
 	var disp=dispositivo();
 	$.ajax({
 		type: "POST",
 		url: "http://www.igitsoft.com/pgtest.php",
-		data: "id="+diso['id']+"&h="+habs+"&p="+pers+"&d="+dias+"&t="+tipo
+		data: "id="+disp['id']+"&h="+habs+"&p="+pers+"&d="+dias+"&t="+tipo
 	}).done(function(msg){
 		if(msg=="0")
-			pgAlert('Error','Hubo un error al sincronizar datos');
+			pgAlert('Error','Hubo un error al sincronizar las reservaciones');
 		else{
 			pgAlert('Sincronizado','Reserva Realizada');
+			if(id!=0)
+				eliminarLocales(idReserva);	
 		}
 	});
 }
