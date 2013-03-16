@@ -1,6 +1,11 @@
 //Eventos
 $(document).ready(function(e){
 	document.addEventListener("deviceready", function(){
+		
+		$('#historial').on("pageload",function(){
+			leerhistorial();
+			});
+			
 		if(!isLogin())
 			window.location.href = "#login";
 		//Funcionalidad de tomar foto
@@ -32,9 +37,9 @@ function reservar(){
 		window.location.href="#nr2";
 	});
 	$('#nr2 #enviar').tap(function(){
-		var habs = $('#nr2 ul[data-role=listview] li:eq(1)').children('select').val();
-		var pers = $('#nr2 ul[data-role=listview] li:eq(2)').children('select').val();
-		var dias = $('#nr2 ul[data-role=listview] li:eq(3)').children('select').val();
+		var habs = $('#cantH').('select').val();
+		var pers = $('#cantP').('select').val();
+		var dias = $('#cantD').('select').val();
 		var tipo = $('#nr1').attr('tipo');
 		
 		//Comprobar que esté en línea
@@ -45,8 +50,7 @@ function reservar(){
 			//Sincronizar en el Servidor
 			alert('desconectate');
 		}
-		$('#historial').on("pageload",function(){
-			leerhistorial();
-			});
+		
 	});
+	
 }
